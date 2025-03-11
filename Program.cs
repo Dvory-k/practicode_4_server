@@ -20,15 +20,15 @@ var app = builder.Build();
 
 app.UseCors("AllowAll");
 
-if (builder.Environment.IsDevelopment())
-{
+// if (builder.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI(options => // UseSwaggerUI is called only in Development.
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
         options.RoutePrefix = string.Empty;
     });
-}
+// }
 
 app.MapGet("/items", async (ToDoDbContext db) => await db.Items.ToListAsync());
 
@@ -61,5 +61,5 @@ app.MapPatch("{id}", async (ToDoDbContext db, int id,bool IsComplete) =>
     return Results.Ok();
 });
 
-
+app.MapGet("/",()=>"my server is running!!!");
 app.Run();
