@@ -31,7 +31,7 @@ public partial class ToDoDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.Property(e => e.IsComplete).HasColumnName("Is complete");
+            entity.Property(e => e.Iscomplete).HasColumnName("Is complete");
             entity.Property(e => e.Name).HasMaxLength(100);
         });
 
