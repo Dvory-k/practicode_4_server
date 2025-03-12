@@ -22,7 +22,7 @@ app.UseCors("AllowAll");
 
 // if (builder.Environment.IsDevelopment())
 // {
-    app.UseSwagger();
+    // app.UseSwagger();
     // app.UseSwaggerUI(options => // UseSwaggerUI is called only in Development.
     // {
     //     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
