@@ -41,7 +41,7 @@ app.MapPost("/", async (ToDoDbContext db, string name) =>
 {
     Item item = new Item();
     item.Name = name;
-    item.IsComplete=false;
+    item.Iscomplete=false;
 
     await db.Items.AddAsync(item);
     return await db.SaveChangesAsync();
@@ -61,7 +61,7 @@ app.MapPatch("{id}", async (ToDoDbContext db, int id,bool IsComplete) =>
    
     var itemToUpdate = await db.Items.FindAsync(id);
     if (itemToUpdate == null) return Results.NotFound();
-    itemToUpdate.IsComplete = IsComplete;
+    itemToUpdate.Iscomplete = IsComplete;
     await db.SaveChangesAsync();
     return Results.Ok();
 });
