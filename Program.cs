@@ -65,6 +65,6 @@ app.MapPatch("{id}", async (ToDoDbContext db, int id,bool IsComplete) =>
     await db.SaveChangesAsync();
     return Results.Ok();
 });
-//
-// app.MapGet("/",()=>"my server is running!!!");
+
+ app.MapGet("/",()=>"my server is running!!!");
 app.Run();
