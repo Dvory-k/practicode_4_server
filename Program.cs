@@ -38,7 +38,7 @@ app.UseCors("AllowAll");
 
 app.MapGet("/items", async (ToDoDbContext db) => await db.Items.ToListAsync());
 
-app.MapPost("/", async (ToDoDbContext db,[FromBody] string name) =>
+app.MapPost("/", async (ToDoDbContext db, string name) =>
 {
     Item item = new Item();
     item.Name = name;
