@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// using System;
+// using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
+// using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 
 namespace TodoApi;
 
