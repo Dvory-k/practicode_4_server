@@ -57,12 +57,12 @@ app.MapDelete("{id}", async (ToDoDbContext db, int id) =>
     return Results.Ok();
 });
 
-app.MapPatch("{id}", async (ToDoDbContext db, int id,bool IsComplete) =>
+app.MapPatch("{id}", async (ToDoDbContext db, int id,bool Iscomplete) =>
 {
    
     var itemToUpdate = await db.Items.FindAsync(id);
     if (itemToUpdate == null) return Results.NotFound();
-    itemToUpdate.Iscomplete = IsComplete;
+    itemToUpdate.Iscomplete = Iscomplete;
     await db.SaveChangesAsync();
     return Results.Ok();
 });
