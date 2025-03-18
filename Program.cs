@@ -25,9 +25,10 @@ var app = builder.Build();
 
 app.UseCors("AllowAll");
 
-if (builder.Environment.IsDevelopment())
-{
+app.UseSwagger();
     app.UseSwagger();
+   if (builder.Environment.IsDevelopment())
+{ 
     app.UseSwaggerUI(options => // UseSwaggerUI is called only in Development.
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
@@ -66,5 +67,5 @@ app.MapPatch("{id}", async (ToDoDbContext db, int id,bool IsComplete) =>
     return Results.Ok();
 });
 
-// app.MapGet("/",()=>"my server is running!!!");
+app.MapGet("/",()=>"my server is running!!!");
 app.Run();
